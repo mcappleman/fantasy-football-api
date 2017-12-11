@@ -18,6 +18,9 @@
     <Name>fantasy-football-api</Name>
     <RootNamespace>fantasy-football-api</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <Environment>DB_URL=postgres://rxmbjsezrihubt:6f8d8556e8aa0bc05c56839e6eacadc9b74a2c995f25a03fc1065b0706bcacb9@ec2-54-243-39-245.compute-1.amazonaws.com:5432/df1tah7q4jlo3q
+APP_SETTINGS=fantasy_football_api.config.DevConfig
+</Environment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,12 +31,32 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="fantasy_football_api\config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fantasy_football_api\controllers\TeamController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fantasy_football_api\controllers\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fantasy_football_api\manage.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fantasy_football_api\models\Team.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fantasy_football_api\models\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="fantasy_football_api\__init__.py" />
     <Compile Include="fantasy_football_api\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fantasy_football_api\" />
+    <Folder Include="fantasy_football_api\models\" />
+    <Folder Include="fantasy_football_api\controllers\" />
     <Folder Include="fantasy_football_api\static\" />
     <Folder Include="fantasy_football_api\static\content\" />
     <Folder Include="fantasy_football_api\static\fonts\" />
