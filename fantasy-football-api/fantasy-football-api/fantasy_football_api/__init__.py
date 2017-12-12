@@ -5,7 +5,6 @@ The flask application package.
 from os import environ
 from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from psycopg2 import *
 
 app = Flask(__name__)
 
